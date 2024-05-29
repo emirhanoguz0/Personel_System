@@ -28,5 +28,5 @@ class Hemşire(Personel):
     def __str__(self):
         return f"Calisma saati: {self.__calisma_saati} \nSertifika: {self.__sertifika} \nHastane: {self.__hastane}"
 
-    def maas_arttir(self):
-        return self.maas
+    def maas_arttir(self, oran):
+        self.__maas = self.__maas * oran

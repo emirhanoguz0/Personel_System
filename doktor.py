@@ -22,11 +22,11 @@ class Doktor(Personel):
     def setDeneyimYili(self,deneyimYili):
         self.__deneyimYili = deneyimYili
 
-    def setHastane(self):
+    def setHastane(self,hastane):
         self.__hastane = hastane
 
     def __str__(self):
         return f"Uzmanlik: {self.__uzmanlik} \nDeneyimYili: {self.__deneyimYili} \nHastane: {self.__hastane}"
 
-    def maas_arttir(self):
-        return self.__maas
+    def maas_arttir(self, oran):
+        self.__maas = self.__maas * oran

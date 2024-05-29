@@ -44,4 +44,9 @@ class Hasta:
         self.tedavi = tedavi
 
     def tedavi_suresi_hesapla(self):
-        return #??!!!???????????!?!?!?!
+        if self.__tedavi == "İlaç":
+            return "2 hafta"
+        if self.__tedavi == "Ameliyat":
+            return "4 ay"
+        if self.__tedavi == "Dinlenme":
+            return "1 ay"
