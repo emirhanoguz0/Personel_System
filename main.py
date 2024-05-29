@@ -4,6 +4,12 @@ from hemşire import Hemşire
 from hasta import Hasta
 import pandas as pd
 
+def kac_tane_bul(dicti,z):
+    sayac = 0
+    for i in dicti[z]:
+        if dicti[z][i] != 0:
+            sayac = sayac + 1
+    return sayac
 def main():
 
     p1= Personel(123123,"Ayça","Uçar","güvenlik",30000)
@@ -14,8 +20,8 @@ def main():
     d3 = Doktor(852852,"Berkcan","Yıldız","Pediatri",60000,"Pediatri",6,"Özel Yeşil Hastanesi")
 
     h1 = Hemşire(963963,"İsmail","Özgüç","",45000,8,"Öfke Yönetimi","İzmir Devlet Hastanesi")
-    h2 = Hemşire(321321,"Akif","Demir","",80000,7,"Yoğun Bakım","Özel Sağlık Hastanesi")
-    h3 = Hemşire(654654,"Anıl","Sümerbaş","",40000,10,"Acil Bakım","Profesör Doktor Ali Devlet Hastanesi")
+    h2 = Hemşire(321321,"Akif","Demir","Yoğun Bakim",80000,7,"Yoğun Bakim","Özel Sağlık Hastanesi")
+    h3 = Hemşire(654654,"Anıl","Sümerbaş","Acil Bakim",40000,10,"Acil Bakim","Profesör Doktor Ali Devlet Hastanesi")
 
     hs1 = Hasta(987987,"Atakan","Oguz","20.05.1989","Grip","İlaç")
     hs2 = Hasta(753753,"Mert","Siliv","02.08.2000","Apandisit","Ameliyat")
@@ -40,7 +46,7 @@ def main():
         "Tedavi": [0] * len(p)
     }
 
-    for i in range(len(p)-3):
+    for i in range(len(p)):
         data['İsim'][i] = p[i].getisim()
         data['Soyad'][i] = p[i].getsoyad()
 
@@ -64,12 +70,22 @@ def main():
             data['Sertifika'][i] = p[i].getSertifika()
             data['Hastane'][i] = p[i].getHastane()
 
+    x = int(input("1-Tablo \n2-Deneyimli Doktor Sayisi \n3-Hasta Tablosu \n4-Maasi 7000den büyükler \n"))
 
     df = pd.DataFrame(data)
-    print(df)
+
+    if x == 1:
+        pd.set_option('display.max_rows', None)
+        pd.set_option('display.max_columns', None)
+        print(df)
+    if x == 2:
+        experienced_doctors = df[df['Deneyim Yılı'] > 5]
+        print(len(experienced_doctors))
+    if x == 3:
+        hasta_df = df[df['Personel No'] == 0].sort_values(by='İsim')
+        print(hasta_df)
+    if x == 4:
+        maas7k_df = df[df['Maas'] > 7000]
+        print(maas7k_df[["Personel No","İsim","Soyad","Maas"]])
+
 main()
-
-
-
-
-
