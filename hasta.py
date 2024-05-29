@@ -1,26 +1,26 @@
 class Hasta:
-    def __init__(self,hasta_no,ad,soyad,dogum_tarihi,hastalik,tedavi):
+    def __init__(self,hasta_no,isim,soyad,dogum_yili,hastalik,tedavi):
         self.hasta_no = hasta_no
-        self.ad = ad
+        self.isim = isim
         self.soyad = soyad
-        self.dogum_tarihi = dogum_tarihi
+        self.dogum_yili = dogum_yili
         self.hastalik = hastalik
         self.tedavi = tedavi
 
     def __str__(self):
-        return f"HastaNo: {self.hasta_no} \nAd: {self.ad} \nSoyad: {self.soyad} \nDogum Tarihi: {self.dogum_tarihi} \nHastalik: {self.hastalik} \nTedavi: {self.tedavi}"
+        return f"HastaNo: {self.hasta_no} \nAd: {self.ad} \nSoyad: {self.soyad} \nDogum Tarihi: {self.dogum_yili} \nHastalik: {self.hastalik} \nTedavi: {self.tedavi}"
 
     def getHastaNo(self):
         return self.hasta_no
 
-    def getAd(self):
-        return self.ad
+    def getisim(self):
+        return self.isim
 
-    def getSoyad(self):
+    def getsoyad(self):
         return self.soyad
 
-    def getDogum_Tarihi(self):
-        return self.dogum_tarihi
+    def getDogum_Yili(self):
+        return self.dogum_yili
 
     def getHastalik(self):
         return self.hastalik
@@ -31,8 +31,8 @@ class Hasta:
     def setHastaNo(self,hasta_no):
         self.hasta_no = hasta_no
 
-    def setAd(self,ad):
-        self.ad = ad
+    def setisim(self,isim):
+        self.isim = isim
 
     def setSoyad(self,soyad):
         self.soyad = soyad

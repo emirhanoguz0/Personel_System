@@ -45,7 +45,7 @@ def main():
 
         if isinstance(p[i], Hasta):
             data['Hasta No'][i] = p[i].getHastaNo()
-            data['Dogum Yili'][i] = p[i].getDogum_Tarihi()
+            data['Dogum Yili'][i] = p[i].getDogum_Yili()
             data['Hastalık'][i] = p[i].getHastalik()
             data['Tedavi'][i] = p[i].getTedavi()
         else:
