@@ -9,7 +9,7 @@ def main():
     p1= Personel(123123,"Ayça","Uçar","güvenlik",30000)
     p2= Personel(456456,"Samed","Ak","temizlik",20000)
 
-    d1 = Doktor(789789,"Ege","Bulut","Kardiyoloji",50000,"Kardiyalog",7,"Atatürk Devlet Hastanesi")
+    d1 = Doktor(789789,"Ege","Bulut","Kardiyaloji",50000,"Kardiyalog",7,"Atatürk Devlet Hastanesi")
     d2 = Doktor(741741,"Berkin","Yalcin","Nöroloji",70000,"Nörolog",5,"Özel Doğa Hastanesi")
     d3 = Doktor(852852,"Berkcan","Yıldız","Pediatri",60000,"Pediatri",6,"Özel Yeşil Hastanesi")
 
